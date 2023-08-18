@@ -1,3 +1,5 @@
+
+// triangle
 function calculateTriangleArea(){
 
         // get triangle base value
@@ -21,6 +23,8 @@ function calculateTriangleArea(){
     areaSpan.innerText=area;
        
 }
+
+// rectangle
 function calculateRectangleArea(){
 
     // get rectangle width value
@@ -42,5 +46,43 @@ function calculateRectangleArea(){
 //    show rectangle area
  const rectangleAreaSpan=document.getElementById('rectangle-area')
   rectangleAreaSpan.innerText=rectangleArea;
+
+}
+
+
+// reusable function
+function  calculateParallelogramArea(){
+  const base =getInputValue('parallelogram-base');
+  console.log(base);
+  const height=getInputValue('parallelogram-height');
+  console.log(height);
+  const area = base * height;
+  setElementInnerText('parallelogram-area',area)
+  
+
+}
+
+
+
+
+function calculateEllipseArea(){
+  const majorRadius=getInputValue('ellipse-major-radius');
+  const minorRadius=getInputValue('ellipse-minor-radius');
+  const area= Math.PI *majorRadius*minorRadius;
+  setElementInnerText('ellipse-area',area)
+}
+// reusable get input value
+function getInputValue(fieldId){
+  const inputField =document.getElementById(fieldId);
+  const inputValueText=inputField.value;
+  const value=parseFloat(inputValueText);
+  return value;
+
+}
+
+// reusable set text
+function setElementInnerText(elementId, area){
+  const element=document.getElementById( elementId);
+  element.innerText=area;
 
 }
